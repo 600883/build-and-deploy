@@ -26,10 +26,11 @@ jobs:
           name: artifact
           path: ./code/dist
 
-    deploy:
-      runs-on: ubuntu-latest
-      name: Deploy application to Azure Static Websites
-      needs: build
+  deploy:
+  
+    runs-on: ubuntu-latest
+    name: Deploy application to Azure Static Websites
+    needs: build
       steps:
         - name: Get artifact from build step
           uses: actions/download-artifact@v3
